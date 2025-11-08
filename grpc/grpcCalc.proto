@@ -9,9 +9,17 @@ message result {
 message args{
     int32 numOne = 1;
     int32 numTwo = 2;
+    Operation operacao = 3;
+}
+
+enum Operation {
+  SOMA = 0;
+  SUB = 1;
+  MUL = 2;
+  DIV = 3;
 }
 
 service api {
-    rpc add (args) returns (result);
+    rpc calculate (args) returns (result);
 }
 

@@ -24,17 +24,19 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0egrpcCalc.proto\x12\x04main\"\x15\n\x06result\x12\x0b\n\x03num\x18\x01 \x01(\x05\"&\n\x04\x61rgs\x12\x0e\n\x06numOne\x18\x01 \x01(\x05\x12\x0e\n\x06numTwo\x18\x02 \x01(\x05\x32&\n\x03\x61pi\x12\x1f\n\x03\x61\x64\x64\x12\n.main.args\x1a\x0c.main.resultb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0egrpcCalc.proto\x12\x04main\"\x15\n\x06result\x12\x0b\n\x03num\x18\x01 \x01(\x05\"I\n\x04\x61rgs\x12\x0e\n\x06numOne\x18\x01 \x01(\x05\x12\x0e\n\x06numTwo\x18\x02 \x01(\x05\x12!\n\x08operacao\x18\x03 \x01(\x0e\x32\x0f.main.Operation*0\n\tOperation\x12\x08\n\x04SOMA\x10\x00\x12\x07\n\x03SUB\x10\x01\x12\x07\n\x03MUL\x10\x02\x12\x07\n\x03\x44IV\x10\x03\x32,\n\x03\x61pi\x12%\n\tcalculate\x12\n.main.args\x1a\x0c.main.resultb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'grpcCalc_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
+  _globals['_OPERATION']._serialized_start=122
+  _globals['_OPERATION']._serialized_end=170
   _globals['_RESULT']._serialized_start=24
   _globals['_RESULT']._serialized_end=45
   _globals['_ARGS']._serialized_start=47
-  _globals['_ARGS']._serialized_end=85
-  _globals['_API']._serialized_start=87
-  _globals['_API']._serialized_end=125
+  _globals['_ARGS']._serialized_end=120
+  _globals['_API']._serialized_start=172
+  _globals['_API']._serialized_end=216
 # @@protoc_insertion_point(module_scope)

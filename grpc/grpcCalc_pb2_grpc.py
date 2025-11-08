@@ -34,8 +34,8 @@ class apiStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.add = channel.unary_unary(
-                '/main.api/add',
+        self.calculate = channel.unary_unary(
+                '/main.api/calculate',
                 request_serializer=grpcCalc__pb2.args.SerializeToString,
                 response_deserializer=grpcCalc__pb2.result.FromString,
                 _registered_method=True)
@@ -44,7 +44,7 @@ class apiStub(object):
 class apiServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def add(self, request, context):
+    def calculate(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -53,8 +53,8 @@ class apiServicer(object):
 
 def add_apiServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'add': grpc.unary_unary_rpc_method_handler(
-                    servicer.add,
+            'calculate': grpc.unary_unary_rpc_method_handler(
+                    servicer.calculate,
                     request_deserializer=grpcCalc__pb2.args.FromString,
                     response_serializer=grpcCalc__pb2.result.SerializeToString,
             ),
@@ -70,7 +70,7 @@ class api(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def add(request,
+    def calculate(request,
             target,
             options=(),
             channel_credentials=None,
@@ -83,7 +83,7 @@ class api(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/main.api/add',
+            '/main.api/calculate',
             grpcCalc__pb2.args.SerializeToString,
             grpcCalc__pb2.result.FromString,
             options,
